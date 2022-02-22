@@ -1,0 +1,22 @@
+name: Code Quality
+on:
+  push:
+    branches:
+      - 'main'
+  pull_request:
+
+jobs:
+  code-quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: install npm dependencies
+        run: npm ci
+      - name: lint
+        run: npm run lint
+      - name: test
+        run: npm run test:ci
+      - name: report coverage
+        run: ./scripts/test-cc-report.sh
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
