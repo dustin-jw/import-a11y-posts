@@ -1,9 +1,9 @@
-FROM node:16
+FROM denoland/deno:latest
 
-WORKDIR /var/www/html
+WORKDIR /app
 
-COPY . /var/www/html
+USER deno
 
-RUN npm ci
-RUN npm run clean
-RUN npm run build
+COPY . /app
+
+CMD ["run", "src/index.ts"]

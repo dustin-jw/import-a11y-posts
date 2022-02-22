@@ -1,11 +1,8 @@
 version: "3.7"
 
 services:
-  web:
+  importer:
     build: .
-    container_name: starter-web
-    ports:
-      - 8080:8080
+    container_name: importer
     volumes:
-      - .:/var/www/html
-    command: npm run serve
+      - .:/app

@@ -1,28 +1,27 @@
-# Cohort Project Starter
+# Import Accessibility Posts
 
-Use this template for projects using Express to serve up basic content.
+This runs a job on a regular basis that fetches the latest Foundry posts and adds any tagged with "Accessibility" to our list of accessibility resources.
 
 ## Getting Started
 
-Clone this repo or [generate a new repo using this template](https://github.com/dustin-jw/cohort-project-starter/generate). Then, install dependencies and choose whether to run in development or production mode.
+Clone this repo and build your Docker container.
 
 ```sh
-npm ci
+npm run build
+
+# or
+
+docker-compose build
 ```
 
-To run in development mode:
+To run the script:
 
 ```sh
 npm start
-```
 
-To run in production mode:
-```sh
+# or
+
 docker-compose up
-
-# or to run it in detached mode
-
-docker-compose up -d
 ```
 
 To lint and run tests:

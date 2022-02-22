@@ -16,7 +16,3 @@ jobs:
         run: npm run lint
       - name: test
         run: npm run test:ci
-      - name: report coverage
-        run: ./scripts/test-cc-report.sh
-        env:
-          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
