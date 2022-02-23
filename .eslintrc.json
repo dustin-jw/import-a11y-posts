@@ -17,6 +17,10 @@
     "airbnb-typescript/base"
   ],
   "rules": {
-    "import/prefer-default-export": 0
+    "import/prefer-default-export": 0,
+    "import/extensions": [2, "always"]
+  },
+  "globals": {
+    "Deno": true
   }
 }

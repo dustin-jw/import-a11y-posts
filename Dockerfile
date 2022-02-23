@@ -6,4 +6,4 @@ USER deno
 
 COPY . /app
 
-CMD ["run", "src/index.ts"]
+CMD ["deno", "run", "--allow-read", "--allow-env", "--allow-net", "src/index.ts"]
