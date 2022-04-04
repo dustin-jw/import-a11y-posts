@@ -1,6 +1,10 @@
 name: Import Accessibility Posts
 
 on:
+  push:
+    branches:
+      - main
+  pull_request:
   schedule:
     - cron: '0 12 * * MON'
 
@@ -21,3 +25,6 @@ jobs:
           deno-version: ${{ matrix.deno-version }}
       - name: Import Latest Posts
         run: deno run --allow-read --allow-env --allow-net src/index.ts
+        env:
+          AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
+          AIRTABLE_BASE_ID: ${{ secrets.AIRTABLE_BASE_ID }}
