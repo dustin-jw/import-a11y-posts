@@ -6,23 +6,18 @@ on:
       - main
   pull_request:
   schedule:
-    - cron: '0 12 * * MON'
+    - cron: "0 12 * * MON"
 
 jobs:
   import:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        deno-version: [1.19.2]
-
     steps:
       - name: checkout repository
-        uses: actions/checkout@v2
-      - name: Use Deno Version ${{ matrix.deno-version }}
-        uses: denolib/setup-deno@v2
+        uses: actions/checkout@v3
+      - name: Use Deno Version 1.19.2
+        uses: denoland/setup-deno@v1
         with:
-          deno-version: ${{ matrix.deno-version }}
+          deno-version: "1.19.2"
       - name: Import Latest Posts
         run: deno run --allow-read --allow-env --allow-net src/index.ts
         env:
