@@ -1,4 +1,4 @@
-import { parse } from 'https://deno.land/x/xml/mod.ts';
+import { parse } from 'https://deno.land/x/xml@4.0.0/mod.ts';
 
 interface Post {
   title: string
